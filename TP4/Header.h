@@ -5,7 +5,7 @@
 
 using namespace std;
 
-typedef int elt;
+typedef string elt;
 
 typedef struct maillon {
 	elt numero;
@@ -35,7 +35,7 @@ fileAttente filenouv();
 //f : la file						 //
 //Postconditions : f est vide		 //
 ///////////////////////////////////////
-void init(fileAttente f);
+void init(fileAttente *f);
 
 ////////////////////////////////////////////////////////////////
 //Cette procédure permet d'ajouter un élément en queue de file//
@@ -43,19 +43,19 @@ void init(fileAttente f);
 //x : l'élément à ajouter									  //
 //Préconditions : f est initialisée							  //
 ////////////////////////////////////////////////////////////////
-void ajouter(fileAttente &f, int x);
+void ajouter(fileAttente *f, elt x);
 
 /////////////////////////////////////////////////////////////////
 //Cette procédure permet de consulter l'élément en tête de file//
 //f : la file												   //
 /////////////////////////////////////////////////////////////////
-void consult(fileAttente f);
+void consult(fileAttente *f);
 
 ////////////////////////////////////////////////////////////////
 //Cette procédure permet de retirer un élément en tête de file//
 //f : la file												  //
 ////////////////////////////////////////////////////////////////
-void retirer(fileAttente f);
+void retirer(fileAttente *f);
 
 /////////////////////////////////////////////////////////////
 //Cette fonction permet d'obteenir la longueur de la file  //

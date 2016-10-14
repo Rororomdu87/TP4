@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
+#include <string>
 #include "Header.h"
 
 using namespace std;
 
 int main() {
 
-	int choix = 3;
-	elt x;
+	int choix;
+	string x;
 	fileAttente f = filenouv();
 
 	do
@@ -32,10 +33,12 @@ int main() {
 		case 4:
 			cout << "La longueur de la file est de : " << longueur(f) << endl;
 			break;
+		case 5:
+			break;
 		default:
-			cout << "Au revoir !" << endl;
+			cout << "Au revoir" << endl;
 			break;
 		}
 
-	} while (choix != 5);
+	} while (choix != 6);
 }

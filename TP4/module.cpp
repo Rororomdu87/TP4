@@ -6,7 +6,6 @@ using namespace std;
 
 void menu()
 {
-	cout << endl << endl;
 	cout << "************* Menu *************" << endl;
 	cout << "1. Ajouter une personne en queue" << endl;
 	cout << "2. Retirer la personne en tete" << endl;
