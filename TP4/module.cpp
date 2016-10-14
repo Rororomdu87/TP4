@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include <iostream>
-#include <stdlib.h>
 #include "Header.h"
 using namespace std;
 
@@ -27,21 +25,24 @@ fileAttente filenouv() {
 	return f;
 }
 
-void ajouter(fileAttente &f, int x) {
+void ajouter(fileAttente f, elt x) {
 	maillon *nm;
 	nm = new maillon;
-	(*nm).numero = x;
-	(*nm).suivant = NULL;
 
 	if (f.queue == NULL)
 	{
+		(*nm).numero = x;
+		(*nm).suivant = NULL;
 		f.queue = nm;
 		f.tete = nm;
 	}
 	else
 	{
-		(*(f.queue)).suivant = nm;
-		f.queue = nm;
+		nm = f.queue;
+		(*nm).suivant = new maillon;
+		f.queue = (*nm).suivant;
+		(*(f.queue)).numero = x;
+		(*(f.queue)).suivant = NULL;
 	}
 }
 
@@ -72,8 +73,7 @@ void consult(fileAttente f) {
 	if (f.tete != NULL)
 	{
 		cout << "La numero en tete est : ";
-		cout << (*(f.tete)).numero;
-		cout << endl;
+		cout << (*(f.tete)).numero << endl;
 	}
 	else
 	{
@@ -91,6 +91,10 @@ int longueur(fileAttente f) {
 	if (f.tete == NULL)
 	{
 		return 0;
+	}
+	else if (f.tete == f.queue)
+	{
+		return 1;
 	}
 	else
 	{

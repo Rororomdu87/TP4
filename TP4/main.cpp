@@ -1,7 +1,5 @@
-#include <stdio.h>
 #include <iostream>
-#include <stdlib.h>
-#include <string>
+#include <stdio.h>
 #include "Header.h"
 
 using namespace std;
@@ -9,7 +7,7 @@ using namespace std;
 int main() {
 
 	int choix;
-	string x;
+	char* x="";
 	fileAttente f = filenouv();
 
 	do
@@ -20,7 +18,7 @@ int main() {
 		switch (choix)
 		{
 		case 1:
-			cout << "Entrer un entier a mettre dans la file :";
+			cout << "Entrer un nom a mettre dans la file : ";
 			cin >> x;
 			ajouter(f, x);
 			break;
