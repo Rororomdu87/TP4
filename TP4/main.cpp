@@ -19,7 +19,7 @@ int main() {
 		{
 		case 1:
 			cout << "Entrer un nom a mettre dans la file : ";
-			cin >> x;
+			scanf_s("%s", x);
 			ajouter(f, x);
 			break;
 		case 2:
