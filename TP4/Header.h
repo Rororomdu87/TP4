@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <iostream>
+#ifndef HEADER_H
+#define HEADER_H
+
+using namespace std;
+
+typedef int elt;
+
+typedef struct maillon {
+	elt numero;
+	maillon *suivant;
+} maillon;
+
+typedef struct file {
+	maillon *tete;
+	maillon *queue;
+} fileAttente;
+
+//Prototypes
+
+////////////////////////////////////////////////
+//Cette procédure permet l'affichage d'un menu//
+////////////////////////////////////////////////
+void menu();
+
+/////////////////////////////////////////
+//Cette fonction crée une file vide.   //
+//Retourne une file de type fileAttente//
+/////////////////////////////////////////
+fileAttente filenouv();
+
+///////////////////////////////////////
+//Cette procédure initialise une file//
+//f : la file						 //
+//Postconditions : f est vide		 //
+///////////////////////////////////////
+void init(fileAttente f);
+
+////////////////////////////////////////////////////////////////
+//Cette procédure permet d'ajouter un élément en queue de file//
+//f : la file												  //
+//x : l'élément à ajouter									  //
+//Préconditions : f est initialisée							  //
+////////////////////////////////////////////////////////////////
+void ajouter(fileAttente &f, int x);
+
+/////////////////////////////////////////////////////////////////
+//Cette procédure permet de consulter l'élément en tête de file//
+//f : la file												   //
+/////////////////////////////////////////////////////////////////
+void consult(fileAttente f);
+
+////////////////////////////////////////////////////////////////
+//Cette procédure permet de retirer un élément en tête de file//
+//f : la file												  //
+////////////////////////////////////////////////////////////////
+void retirer(fileAttente f);
+
+/////////////////////////////////////////////////////////////
+//Cette fonction permet d'obteenir la longueur de la file  //
+//f : la file											   //
+//Retourne un entier de la valeur de la longueur de la file//
+/////////////////////////////////////////////////////////////
+int longueur(fileAttente f);
+
+#endif
